@@ -1,0 +1,22 @@
+{
+  "name": "majs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "snazzy": "^8.0.0",
+    "standard": "^13.0.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "lint": "standard | snazzy",
+    "fix": "standard --fix"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
