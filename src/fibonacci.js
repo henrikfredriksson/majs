@@ -6,7 +6,7 @@
  * @returns {Number} the n'th Fibonacci number
  */
 function fibonacci (n) {
-  let res = fibTuple(n)
+  const res = fibTuple(n)
   return res.shift()
 }
 
@@ -27,5 +27,3 @@ const fibTuple = (n) => {
 }
 
 module.exports = fibonacci
-
-

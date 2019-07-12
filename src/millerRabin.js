@@ -1,9 +1,15 @@
 
-function probablyPrime (n, k = 64) {
-  if (n === 2 || n === 3) {
-    return true
-  }
-  if (n % 2 === 0 || n % 3 === 0 || n < 2) {
+function probablyPrime (n, k = 100) {
+  if (n === 2 || n === 3) { return true }
+
+
+  const smallPrimes = [2,3,5,7,11,13, 17]
+
+  let res = smallPrimes.map(x => n % x === 0).filter(x => x).includes(true)
+  if (res) return false
+
+  if (
+    n % 2 === 0 || n % 3 === 0 || n % 5 === 0 || n % 7 === 0 || n < 2) {
     return false
   }
 
@@ -22,13 +28,18 @@ function probablyPrime (n, k = 64) {
   while (k--) {
     let a = Math.pow(witness(n), s)
 
-    if (a % n === 1 || a % n === n - 1) continue
+    if (a % n === 1) continue
+
+    let testFails = false
     for (let i = 0; i < s; i++) {
-      if (a === 1) return false
-      if (a === n - 1) continue
+      a = Math.pow(a, 2) % n
+      if (a === n - 1) {
+        testFails = true
+        break
+      }
     }
 
-    a = Math.pow(a, 2) % n
+    if (testFails) return false
   }
   return true
 }
