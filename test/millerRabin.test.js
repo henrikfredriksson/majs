@@ -6,7 +6,7 @@ describe('Test Miller-Rabin moduled', () => {
   })
 
   it('10 is composite', () => {
-    expect(millerRabin(10)).toBeFalsy
+    expect(millerRabin(10)).toBeFalsy()
   })
 
   it('53 is prime', () => {
@@ -18,7 +18,7 @@ describe('Test Miller-Rabin moduled', () => {
   })
 
   it('1344513 is composite', () => {
-    expect(millerRabin(1344513)).toBeFalsy
+    expect(millerRabin(1344513)).toBeFalsy()
   })
 
   it('179425579 is prime', () => {
