@@ -2,10 +2,9 @@
 function probablyPrime (n, k = 100) {
   if (n === 2 || n === 3) { return true }
 
+  const smallPrimes = [2, 3, 5, 7, 11, 13, 17]
 
-  const smallPrimes = [2,3,5,7,11,13, 17]
-
-  let res = smallPrimes.map(x => n % x === 0).filter(x => x).includes(true)
+  const res = smallPrimes.map(x => n % x === 0).filter(x => x).includes(true)
   if (res) return false
 
   if (
